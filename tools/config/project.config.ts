@@ -36,7 +36,7 @@ export class ProjectConfig extends SeedConfig {
       name: 'firebase',
       path: 'node_modules/firebase/',
       packageMeta: {
-        main: 'firebase-browser.js',
+        main: 'firebase.js',
         defaultExtension: 'js'
       }
     });
