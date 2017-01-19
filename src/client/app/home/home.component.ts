@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NameListService } from '../shared/name-list/name-list.service';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /**
  * This class represents the lazy loaded HomeComponent.
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
   newName: string = '';
   errorMessage: string;
   names: any[] = [];
+  tituloref: FirebaseObjectObservable<any>;
 
   /**
    * Creates an instance of the HomeComponent with the injected
@@ -22,7 +24,14 @@ export class HomeComponent implements OnInit {
    *
    * @param {NameListService} nameListService - The injected NameListService.
    */
-  constructor(public nameListService: NameListService) {}
+  constructor(public nameListService: NameListService, af: AngularFire) {
+        this.tituloref = af.database.object('titulo', { preserveSnapshot: true });
+        
+        this.tituloref.subscribe(snapshot => {
+          this.titulo=snapshot.val();
+        });
+        
+  }
 
   /**
    * Get the names OnInit
