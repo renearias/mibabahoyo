@@ -5,6 +5,10 @@
   "repository": {
     "url": "https://github.com/mgechev/angular-seed"
   },
+   "engines": {
+    "node": "6.7.*",
+    "npm": "3.10.*"
+  },
   "scripts": {
     "build.dev": "gulp build.dev --color --env-config dev",
     "build.dev.watch": "gulp build.dev.watch --color",

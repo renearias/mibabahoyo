@@ -1,0 +1,8 @@
+{
+  "name": "mibabahoyo",
+  "description": "encuentra trabajo en babahoyo",
+  "repository": "https://github.com/renearias/mibabahoyo",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs"
+}
