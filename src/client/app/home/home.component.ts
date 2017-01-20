@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
         this.personas= af.database.list('/users');
         this.business= af.database.list('/business');
         //this.resetPerson();
-
   }
 
   /**
@@ -52,7 +51,6 @@ export class HomeComponent implements OnInit {
         error => this.errorMessage = <any>error
       );
   }
-    
   /**
    * Pushes a new name onto the names array
    * @return {boolean} false to prevent default form submit behavior to refresh the page.
@@ -63,7 +61,7 @@ export class HomeComponent implements OnInit {
     this.newName = '';
     return false;
   }
-  
+
   /**
    * Pushes a new name onto the names array
    * @return {boolean} false to prevent default form submit behavior to refresh the page.
@@ -75,7 +73,7 @@ export class HomeComponent implements OnInit {
     this.newPerson = {};
     return false;
   }
-  
+
   addBusiness(): boolean {
     // TODO: add business to firebase
       console.log(this.newBusiness);

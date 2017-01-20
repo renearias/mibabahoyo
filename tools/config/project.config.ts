@@ -14,7 +14,7 @@ export class ProjectConfig extends SeedConfig {
   constructor() {
     super();
     // this.APP_TITLE = 'Put name of your app here';
-    
+
     this.ENABLE_SCSS = 1;
 
     /* Enable typeless compiler runs (faster) between typed compiler runs. */
@@ -53,7 +53,7 @@ export class ProjectConfig extends SeedConfig {
         defaultExtension: 'js'
       }
     });
-    
+
     // add Material configuration to SystemJS.
     this.addPackageBundles({
       name:'@angular/material',
@@ -63,7 +63,7 @@ export class ProjectConfig extends SeedConfig {
         defaultExtension: 'js'
       }
     });
-    
+
    // Add Firebase configuration to SystemJS
     this.addPackageBundles({
       name: 'firebase',
