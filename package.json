@@ -5,7 +5,7 @@
   "repository": {
     "url": "https://github.com/mgechev/angular-seed"
   },
-   "engines": {
+  "engines": {
     "node": "6.7.*",
     "npm": "3.10.*"
   },
@@ -140,7 +140,7 @@
     "@angular/platform-browser": "~2.4.0",
     "@angular/platform-browser-dynamic": "~2.4.0",
     "@angular/router": "~3.4.1",
-    "angularfire2": "^2.0.0-beta.6",
+    "angularfire2": "^2.0.0-beta.7",
     "core-js": "^2.4.1",
     "firebase": "^3.4.0",
     "intl": "^1.2.5",
