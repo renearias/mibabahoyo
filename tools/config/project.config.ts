@@ -13,7 +13,7 @@ export class ProjectConfig extends SeedConfig {
 
   constructor() {
     super();
-    // this.APP_TITLE = 'Put name of your app here';
+    this.APP_TITLE = 'Mi Babahoyo encuentra trabajo y encuentra personal';
 
     this.ENABLE_SCSS = 1;
 
@@ -43,6 +43,25 @@ export class ProjectConfig extends SeedConfig {
     ];
 
 
+   // Add Firebase configuration to SystemJS
+    this.addPackageBundles({
+      name: 'firebase',
+      path: 'node_modules/firebase/',
+      packageMeta: {
+        main: 'firebase.js',
+        defaultExtension: 'js'
+      }
+    });
+
+    // Add AngularFire configuration to SystemJS
+    this.addPackageBundles({
+      name: 'angularfire2',
+      path: 'node_modules/angularfire2/bundles/angularfire2.umd.js',
+      packageMeta: {
+        main: 'angularfire2.js',
+        defaultExtension: 'js'
+      }
+    });
 
     // add flex-layout configuration to SystemJS.
     this.addPackageBundles({
@@ -64,25 +83,6 @@ export class ProjectConfig extends SeedConfig {
       }
     });
 
-   // Add Firebase configuration to SystemJS
-    this.addPackageBundles({
-      name: 'firebase',
-      path: 'node_modules/firebase/',
-      packageMeta: {
-        main: 'firebase.js',
-        defaultExtension: 'js'
-      }
-    });
-
-    // Add AngularFire configuration to SystemJS
-    this.addPackageBundles({
-      name: 'angularfire2',
-      path: 'node_modules/angularfire2/bundles/angularfire2.umd.js',
-      packageMeta: {
-        main: 'angularfire2.js',
-        defaultExtension: 'js'
-      }
-    });
     // Add packages (e.g. ng2-translate)
     // let additionalPackages: ExtendPackages[] = [{
     //   name: 'ng2-translate',

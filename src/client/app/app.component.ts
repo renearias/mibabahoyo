@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Config } from './shared/config/env.config';
 import './operators';
 
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 /**
  * This class represents the main application component.
  */
