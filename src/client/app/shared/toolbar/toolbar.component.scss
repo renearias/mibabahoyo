@@ -1,0 +1,24 @@
+md-toolbar{
+    min-height: 100px;
+}
+.sd-toolbar-icon {
+  color: white;
+}
+
+.sd-toolbar-filler {
+  flex: 1 1 auto;
+}
+.branding{
+    width: 100%;
+    text-align: center;
+    .logo{
+        margin: auto;
+        margin-top: 25px;
+    }
+    .title{
+        margin: auto;
+    }
+}
+img{
+     max-height: 70px;
+}

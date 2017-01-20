@@ -1,13 +1,71 @@
-<p>Howdy! Here's a list of awesome computer scientists. Do you know any others? Add to the list yourself.</p>
+<div class="home-card-container">
+  <md-card class="greeting">
+    <md-card-title>¡Hey! ¿Buscando Trabajo en Babahoyo?</md-card-title>
+    <md-card-content>
+      <p> Registrate y Recibe Ofertas en tu correo electrónico y celular.
+      </p>
+    </md-card-content>
+  </md-card>
+   <md-card class="advertisement">
+    <md-card-title>¡ANUNCIA AQUI!</md-card-title>
+    <a md-raised-button color="primary" type="submit" href="#consiguelo" class="home-button">CONSIGUE EMPLEO O CONSIGUE GENTE</a>
+   </md-card>
+   <section class="publicaciones" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center">
+        <div fxFlex="50%" fxFlexAlign="start"  fxLayout="column" fxLayoutAlign="center" class="personas">
+            <h2 fxLayoutAlign="center">PERSONAS QUE SABEN...</h2>
+            <md-card *ngFor="let item of personas | async" class="anuncio">
+                <md-card-title>{{item.actividad}}</md-card-title>
+                <md-card-content>
+                    <h3>{{item.name}} {{item.lastname}}</h3>
+                    <h3>{{item.phone}} </h3>
+                </md-card-content>
+            </md-card>
+        </div>
+        <div fxFlex="50%" fxFlexAlign="start" fxLayout="column" fxLayoutAlign="center" class="empresas">
+            <h2 fxLayoutAlign="center">EMPRESAS BUSCANDO...</h2>
+            <md-card *ngFor="let item of business | async" class="anuncio">
+                <md-card-title>{{item.sebusca}}</md-card-title>
+                
+                <md-card-content>
+                    <p class="seconday-text">{{item.quesepa}}<p>
+                    <h3>{{item.empresa}}</h3>
+                    <h3>{{item.contacto}}</h3>
+                    <h3>{{item.phone}} </h3>
+                </md-card-content>
+            </md-card>
+        </div>    
+   </section>
+    <section id="consiguelo" class="publicaciones" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center">
+   <md-card fxFlex="50%">
+     <md-card-title>DATOS PARA CONSEGUIR EMPLEO</md-card-title>
+     <md-card-content>
+      <form (submit)="addPerson()" class="home-form" fxLayout="column" fxLayoutAlign="center">
+                <md-input [(ngModel)]="newPerson.name" name="name" class="home-input" placeholder="Nombre" ngDefaultControl></md-input>
+                <md-input [(ngModel)]="newPerson.lastname" name="lastname" class="home-input" placeholder="Apellido" ngDefaultControl></md-input>
+                <md-input [(ngModel)]="newPerson.email" name="email" class="home-input" placeholder="Correo Electronico" ngDefaultControl></md-input>
+                <md-input [(ngModel)]="newPerson.phone" name="phone" class="home-input" placeholder="Telefono" ngDefaultControl></md-input>
+                <md-textarea rows="5" [(ngModel)]="newPerson.actividad" name="actividad"  placeholder="¿Qué es lo que mejor sabes hacer?" ngDefaultControl></md-textarea>
+                <hr />
+                <button md-raised-button color="primary" type="submit" class="home-button">CONSEGUIR TRABAJO</button>
+        </form>
+    </md-card-content>
+  </md-card>
+  <md-card fxFlex="50%">
+    <md-card-title>DATOS PARA CONSEGUIR PERSONAL</md-card-title>
+     <md-card-content>
+      <form (submit)="addBusiness()" class="home-form" fxLayout="column" fxLayoutAlign="center">
+                <md-input [(ngModel)]="newBusiness.sebusca" name="sebusca" class="home-input" placeholder="Se Busca  (Ej: plomero, cocinera, pintor, abogado, ingeniero, etc)" ngDefaultControl></md-input>
+                <md-textarea rows="5" [(ngModel)]="newBusiness.quesepa" name="quesepa"  placeholder="¿Que sepa hacer? (Ej: pintar edificos altos, cocinar pasteles de carne, construir muros, etc)" ngDefaultControl></md-textarea>
+                <md-input [(ngModel)]="newBusiness.business" name="business" class="home-input" placeholder="Nombre de la Empresa" ngDefaultControl></md-input>
+                <md-input [(ngModel)]="newBusiness.contacto" name="contacto" class="home-input" placeholder="Nombre del Contacto" ngDefaultControl></md-input>
+                <md-input [(ngModel)]="newBusiness.email" name="email" class="home-input" placeholder="Correo Electronico" ngDefaultControl></md-input>
+                <md-input [(ngModel)]="newBusiness.phone" name="phone" class="home-input" placeholder="Telefono" ngDefaultControl></md-input>
+                <md-textarea rows="5" [(ngModel)]="newBusiness.actividad" name="actividad"  placeholder="Actividad de la empresa" ngDefaultControl></md-textarea>
+                <hr />
+                <button md-raised-button color="primary" type="submit" class="home-button">CONSEGUIR PERSONAL</button>
+        </form>
+    </md-card-content>
+  </md-card>      
+   </section>
+</div>
 
-<form (submit)="addName()">
-  <input [(ngModel)]="newName" name="newName" placeholder="Awesome Computer Scientist">
-  <button type="submit">Add</button>
-</form>
-
-<ul>
-  <li *ngFor="let name of names">{{name}}</li>
-</ul>
-
-
-{{titulo}}

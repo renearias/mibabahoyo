@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NameListService } from '../shared/name-list/name-list.service';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 /**
  * This class represents the lazy loaded HomeComponent.
@@ -17,6 +17,10 @@ export class HomeComponent implements OnInit {
   errorMessage: string;
   names: any[] = [];
   tituloref: FirebaseObjectObservable<any>;
+  personas: FirebaseListObservable<any>;
+  business: FirebaseListObservable<any>;
+  newPerson: any = {};
+  newBusiness: any = {};
 
   /**
    * Creates an instance of the HomeComponent with the injected
@@ -25,12 +29,10 @@ export class HomeComponent implements OnInit {
    * @param {NameListService} nameListService - The injected NameListService.
    */
   constructor(public nameListService: NameListService, af: AngularFire) {
-        this.tituloref = af.database.object('titulo', { preserveSnapshot: true });
-        
-        this.tituloref.subscribe(snapshot => {
-          this.titulo=snapshot.val();
-        });
-        
+        this.personas= af.database.list('/users');
+        this.business= af.database.list('/business');
+        //this.resetPerson();
+
   }
 
   /**
@@ -50,7 +52,7 @@ export class HomeComponent implements OnInit {
         error => this.errorMessage = <any>error
       );
   }
-
+    
   /**
    * Pushes a new name onto the names array
    * @return {boolean} false to prevent default form submit behavior to refresh the page.
@@ -61,5 +63,24 @@ export class HomeComponent implements OnInit {
     this.newName = '';
     return false;
   }
-
+  
+  /**
+   * Pushes a new name onto the names array
+   * @return {boolean} false to prevent default form submit behavior to refresh the page.
+   */
+  addPerson(): boolean {
+    // TODO: ad person to firebase
+      console.log(this.newPerson);
+    this.personas.push(this.newPerson);
+    this.newPerson = {};
+    return false;
+  }
+  
+  addBusiness(): boolean {
+    // TODO: add business to firebase
+      console.log(this.newBusiness);
+    this.business.push(this.newBusiness);
+    this.newBusiness = {};
+    return false;
+  }
 }

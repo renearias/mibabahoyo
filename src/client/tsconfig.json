@@ -25,7 +25,8 @@
       "jasmine",
       "protractor",
       "systemjs",
-      "angularfire2"
+      "angularfire2",
+      "hammerjs"
     ]
   },
   "exclude": [
