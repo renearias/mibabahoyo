@@ -29,13 +29,20 @@
   margin: 10px;
 }
 
-.greeting{
-   text-align: center;   
+.greeting {
+  text-align: center; 
+  background: rgba(241, 237, 212, 0.7);
 }
 
-.advertisement{
-   text-align: center;   
+.advertisement {
+  text-align: center; 
+  background: rgba(241, 237, 212, 0.7);
 }
-.anuncio{
-   margin-bottom: 5px;
-}
+
+.anuncio {
+  margin-bottom: 5px;
+  background: #FFFFFF;
+   }
+
+.publicaciones_form {
+  background: rgba(241, 237, 212, 0.7) !important; }
